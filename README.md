@@ -206,7 +206,7 @@ Base Url: http://localhost:8080
 
 
 ## Current Charge
-**Description:** Returns current parking charge of the vehicle.
+**Description:** Returns current parking charge of the vehicle at the current time.
 
 **URL:** ```/vehicle/current-charge```
 
