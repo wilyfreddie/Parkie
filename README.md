@@ -17,9 +17,9 @@ Base Url: http://localhost:8080
 ------------
 
 
-**URL: ** ```/vehicle/in```
+**URL:** ```/vehicle/in```
 
-**Method: ** ```POST```
+**Method:** ```POST```
 
 **Query Params:**
 - vehicleNumber: [Vehicle Plate Number]
