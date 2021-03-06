@@ -1,6 +1,6 @@
 
 # Parkie
-Parking is a parking sytstem with the following features:
+Parkie is a parking sytstem with the following features:
 1. Keeps track of incoming vehicles by monitoring time in, parking time, and time out.
 2. Get the current charge of their vehicle.
 3. Get the list of currently parked vehicles with time (in hours) since parked.
