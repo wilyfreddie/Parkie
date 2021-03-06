@@ -77,18 +77,26 @@ public class VehicleController {
         _vehicleHistory.setTimeIn(vehicle.getTimeIn());
         _vehicleHistory.setTimeParked(vehicle.getTimeParked());
         _vehicleHistory.setTimeOut(currentDate);
-        _vehicleHistory.setCharge(vehicle.currentCharge());
+        if(vehicle.getTimeParked() == null)
+            _vehicleHistory.setCharge(ParkingConfig.getRate());
+        else
+            _vehicleHistory.setCharge(vehicle.currentCharge());
         vehicleRepository.delete(vehicle);
         return ResponseEntity.ok(vehicleHistory.save(_vehicleHistory));
     }
 
     @GetMapping("/vehicle/current-charge")
-    public Map<String, String> vehicleCurrentCharge(@RequestParam(name = "vehicleNumber") int vehicleNumber) {
+    public ResponseEntity vehicleCurrentCharge(@RequestParam(name = "vehicleNumber") int vehicleNumber) {
         Date currentDate = new Date();
         Map<String, String> detail = new HashMap<>(2);
         Vehicle vehicle = vehicleRepository.findByVehicleNumber(vehicleNumber);
+        if (vehicle == null) {
+            Map<String, String> error = new HashMap<>(2);
+            error.put("error", "Vehicle not found!");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
+        }
         detail.put("currentCharge", Float.toString(vehicle.currentCharge()));
-        return detail;
+        return ResponseEntity.ok(detail);
     }
 
 
@@ -112,8 +120,17 @@ public class VehicleController {
                 this.timeSinceParked = timeSinceParked;
             }
 
+            public Date getTimeParked() {
+                return timeParked;
+            }
+
+            public void setTimeParked(Date timeParked) {
+                this.timeParked = timeParked;
+            }
+
             private int vehicleNumber;
             private float timeSinceParked;
+            private Date timeParked;
         }
 
         List<VehicleList> vehicleList = new ArrayList<VehicleList>();
@@ -125,10 +142,16 @@ public class VehicleController {
                 continue;
             vehicle.setVehicleNumber(v.getVehicleNumber());
             vehicle.setTimeSinceParked(v.timeSinceParked());
+            vehicle.setTimeParked(v.getTimeParked());
             vehicleList.add(vehicle);
         }
 
         return vehicleList;
+    }
+
+    @GetMapping("/vehicle/list-in")
+    public ResponseEntity vehicleListIn() {
+        return ResponseEntity.ok(vehicleRepository.findAll());
     }
 
     @GetMapping("/vehicle/slots-available")

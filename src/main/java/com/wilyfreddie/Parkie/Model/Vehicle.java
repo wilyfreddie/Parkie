@@ -53,7 +53,7 @@ public class Vehicle {
 
     public float currentCharge(){
         Date currentDate = new Date();
-        return (float)(this.timeSinceParked() * ParkingConfig.getRate());
+        return (float) Math.ceil((this.timeSinceParked() * ParkingConfig.getRate()));
     }
 
     public float timeSinceParked(){
