@@ -23,10 +23,15 @@ Base Url: http://localhost:8080
 - vehicleNumber: [Vehicle Plate Number]
 
 ### Success Response
-**URL: ** ```http://localhost:8080/vehicle/in?vehicleNumber=9548```
-**Method: ** ```POST```
+**URL:**  ```http://localhost:8080/vehicle/in?vehicleNumber=9548```
+
+**Method:** ```POST```
+
+
 **Code:** ```200 OK```
+
 **Content:**
+
 ```json
 {
     "vehicleNumber": 9548,
@@ -36,10 +41,14 @@ Base Url: http://localhost:8080
 }
 ```
 
+
 ### Error Response
-**URL: ** ```http://localhost:8080/vehicle/in?vehicleNumber=9548```
-**Method: ** ```POST```
+**URL:**```http://localhost:8080/vehicle/in?vehicleNumber=9548```
+
+**Method:** ```POST```
+
 **Code:** ```400 BAD REQUEST```
+
 **Content:**
 ```json
 {
@@ -47,9 +56,12 @@ Base Url: http://localhost:8080
 }
 ```
 
-**URL: ** ```http://localhost:8080/vehicle/in```
-**Method: ** ```POST```
+**URL:** ```http://localhost:8080/vehicle/in```
+
+**Method:** ```POST```
+
 **Code:** ```400 BAD REQUEST```
+
 **Content:**
 ```json
 {
@@ -63,20 +75,27 @@ Base Url: http://localhost:8080
 
 
 
+
+
 ## Vehicle Park
 
 ------------
 
 
-**URL: ** ```/vehicle/park```
-**Method: ** ```POST```
+**URL:** ```/vehicle/park```
+
+**Method:** ```POST```
+
 **Query Params:**
 - vehicleNumber: [Vehicle Plate Number]
 
 ### Success Response
-**URL: ** ```http://localhost:8080/vehicle/park?vehicleNumber=9548```
-**Method: ** ```POST```
+**URL:** ```http://localhost:8080/vehicle/park?vehicleNumber=9548```
+
+**Method:** ```POST```
+
 **Code:** ```200 OK```
+
 **Content:**
 ```json
 {
@@ -89,9 +108,12 @@ Base Url: http://localhost:8080
 
 
 ### Error Response
-**URL: ** ```http://localhost:8080/vehicle/park?vehicleNumber=9548```
-**Method: ** ```POST```
+**URL:** ```http://localhost:8080/vehicle/park?vehicleNumber=9548```
+
+**Method:** ```POST```
+
 **Code:** ```400 BAD REQUEST```
+
 **Content:**
 ```json
 {
@@ -99,9 +121,12 @@ Base Url: http://localhost:8080
 }
 ```
 
-**URL: ** ```http://localhost:8080/vehicle/park?vehicleNumber=1234```
-**Method: ** ```POST```
+**URL:** ```http://localhost:8080/vehicle/park?vehicleNumber=1234```
+
+**Method:** ```POST```
+
 **Code:** ```400 BAD REQUEST```
+
 **Content:**
 ```json
 {
@@ -109,9 +134,12 @@ Base Url: http://localhost:8080
 }
 ```
 
-**URL: ** ```http://localhost:8080/vehicle/park```
-**Method: ** ```POST```
+**URL:** ```http://localhost:8080/vehicle/park```
+
+**Method:** ```POST```
+
 **Code:** ```400 BAD REQUEST```
+
 **Content:**
 ```json
 {
