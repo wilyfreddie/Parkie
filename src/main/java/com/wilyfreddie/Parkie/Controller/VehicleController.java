@@ -51,6 +51,11 @@ public class VehicleController {
             error.put("error", "Vehicle not found!");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
         }
+        if (vehicle.getTimeParked() != null) {
+            Map<String, String> error = new HashMap<>(2);
+            error.put("error", "Vehicle already parked!");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
+        }
 
         vehicle.setTimeParked(currentDate);
         return ResponseEntity.ok(vehicleRepository.save(vehicle));
