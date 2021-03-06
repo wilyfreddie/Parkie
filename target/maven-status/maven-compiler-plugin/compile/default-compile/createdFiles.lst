@@ -1,0 +1,8 @@
+com\wilyfreddie\Parkie\Model\ParkingConfig.class
+com\wilyfreddie\Parkie\Model\Vehicle.class
+com\wilyfreddie\Parkie\Controller\VehicleController$1VehicleList.class
+com\wilyfreddie\Parkie\Controller\VehicleController.class
+com\wilyfreddie\Parkie\Repositories\VehicleRepository.class
+com\wilyfreddie\Parkie\Model\VehicleHistory.class
+com\wilyfreddie\Parkie\Repositories\VehicleHistoryRepository.class
+com\wilyfreddie\Parkie\ParkieApplication.class
