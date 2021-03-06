@@ -23,7 +23,7 @@ public class VehicleController {
 
 
     @PostMapping("/vehicle/in")
-    public ResponseEntity vehicleIn(@RequestParam(name = "vehicleNumber") int vehicleNumber) {
+    public ResponseEntity vehicleIn(@RequestParam(name = "vehicleNumber") String vehicleNumber) {
         Vehicle vehicle = vehicleRepository.findByVehicleNumber(vehicleNumber);
         if (vehicle != null) {
             Map<String, String> error = new HashMap<>(2);
@@ -43,7 +43,7 @@ public class VehicleController {
     }
 
     @PostMapping("/vehicle/park")
-    public ResponseEntity vehiclePark(@RequestParam(name = "vehicleNumber") int vehicleNumber) {
+    public ResponseEntity vehiclePark(@RequestParam(name = "vehicleNumber") String vehicleNumber) {
         Date currentDate = new Date();
         Vehicle vehicle = vehicleRepository.findByVehicleNumber(vehicleNumber);
         if (vehicle == null) {
@@ -62,7 +62,7 @@ public class VehicleController {
     }
 
     @PostMapping("/vehicle/out")
-    public ResponseEntity vehicleOut(@RequestParam(name = "vehicleNumber") int vehicleNumber) {
+    public ResponseEntity vehicleOut(@RequestParam(name = "vehicleNumber") String vehicleNumber) {
         Date currentDate = new Date();
         Vehicle vehicle = vehicleRepository.findByVehicleNumber(vehicleNumber);
 
@@ -86,7 +86,7 @@ public class VehicleController {
     }
 
     @GetMapping("/vehicle/current-charge")
-    public ResponseEntity vehicleCurrentCharge(@RequestParam(name = "vehicleNumber") int vehicleNumber) {
+    public ResponseEntity vehicleCurrentCharge(@RequestParam(name = "vehicleNumber") String vehicleNumber) {
         Date currentDate = new Date();
         Map<String, String> detail = new HashMap<>(2);
         Vehicle vehicle = vehicleRepository.findByVehicleNumber(vehicleNumber);
@@ -104,11 +104,11 @@ public class VehicleController {
     @ResponseBody
     public List vehicleCurrentCharge() {
         class VehicleList {
-            public int getVehicleNumber() {
+            public String getVehicleNumber() {
                 return vehicleNumber;
             }
 
-            public void setVehicleNumber(int vehicleNumber) {
+            public void setVehicleNumber(String vehicleNumber) {
                 this.vehicleNumber = vehicleNumber;
             }
 
@@ -128,7 +128,7 @@ public class VehicleController {
                 this.timeParked = timeParked;
             }
 
-            private int vehicleNumber;
+            private String vehicleNumber;
             private float timeSinceParked;
             private Date timeParked;
         }

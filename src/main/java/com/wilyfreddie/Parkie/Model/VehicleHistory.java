@@ -23,7 +23,7 @@ public class VehicleHistory{
 
     @Column(name="vehicleNumber")
     @NotNull
-    private int vehicleNumber;
+    private String vehicleNumber;
 
     @NotNull
     @Temporal(TemporalType.TIMESTAMP)

@@ -21,7 +21,7 @@ public class Vehicle {
     @Id
     @Column(name="vehicleNumber")
     @NotNull
-    private int vehicleNumber;
+    private String vehicleNumber;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name="timeIn")
@@ -35,7 +35,7 @@ public class Vehicle {
     @Column(name="timeOut")
     private Date timeOut;
 
-    public int getVehicleNumber() {
+    public String getVehicleNumber() {
         return vehicleNumber;
     }
 
@@ -53,7 +53,10 @@ public class Vehicle {
 
     public float currentCharge(){
         Date currentDate = new Date();
-        return (float) Math.ceil((this.timeSinceParked() * ParkingConfig.getRate()));
+        if (this.getTimeParked() == null || Math.ceil((this.timeSinceParked())) < 1)
+            return ParkingConfig.getRate();
+        else
+            return (float) Math.ceil((this.timeSinceParked() * ParkingConfig.getRate()));
     }
 
     public float timeSinceParked(){

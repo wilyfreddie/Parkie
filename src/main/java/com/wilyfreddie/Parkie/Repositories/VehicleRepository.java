@@ -8,5 +8,5 @@ import org.springframework.data.repository.query.Param;
 public interface VehicleRepository extends JpaRepository<Vehicle,Integer> {
 
     @Query("SELECT v FROM Vehicle v WHERE v.vehicleNumber = :vehicleNumber")
-    Vehicle findByVehicleNumber(@Param("vehicleNumber") int vehicleNumber);
+    Vehicle findByVehicleNumber(@Param("vehicleNumber") String vehicleNumber);
 }
