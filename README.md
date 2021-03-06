@@ -14,9 +14,6 @@ Base Url: http://localhost:8080
 
 ## Vehicle In
 
-------------
-
-
 **URL:** ```/vehicle/in```
 
 **Method:** ```POST```
@@ -80,9 +77,6 @@ Base Url: http://localhost:8080
 
 
 ## Vehicle Park
-
-------------
-
 
 **URL:** ```/vehicle/park```
 
