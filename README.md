@@ -90,6 +90,7 @@ Base Url: http://localhost:8080
 
 ## Vehicle Park
 **Description:** Action taken when a vehicle inside the parking lot has parked.
+
 **URL:** ```/vehicle/park```
 
 **Method:** ```POST```
@@ -161,8 +162,11 @@ Base Url: http://localhost:8080
 
 ## Vehicle Out
 **Description:** Action taken when a vehicle leaves the parking lot. Data from the vehicles table is deleted and transferred into the vehicle history table.
+
 **URL:** ```/vehicle/out```
+
 **Method:** ```POST```
+
 **Query Params:**
 - vehicleNumber: [Vehicle Plate Number]
 
@@ -203,15 +207,20 @@ Base Url: http://localhost:8080
 
 ## Current Charge
 **Description:** Returns current parking charge of the vehicle.
+
 **URL:** ```/vehicle/current-charge```
+
 **Method:** ```GET```
+
 **Query Params:**
 - vehicleNumber: [Vehicle Plate Number]
 
 
 ### Success Response
 **URL:** ```http://localhost:8080/vehicle/current-charge?vehicleNumber=9548```
+
 **Code:** ```200 OK```
+
 **Content:**
 ```json
 {
@@ -221,8 +230,11 @@ Base Url: http://localhost:8080
 
 ### Error Response
 **URL:** ```http://localhost:8080/vehicle/current-charge?vehicleNumber=9548```
+
 **Method:** ```POST```
+
 **Code:** ```400 BAD REQUEST```
+
 **Content:**
 ```json
 {
@@ -233,7 +245,9 @@ Base Url: http://localhost:8080
 
 ## Slots Available
 **Description:** Returns the number of available parking slots.
+
 **URL:** ```/vehicle/slots-available```
+
 **Method:** ```GET```
 
 
@@ -249,7 +263,9 @@ Base Url: http://localhost:8080
 
 ## Parked List
 **Description:** Returns list of parked vehicles.
+
 **URL:** ```/vehicle/list-parked```
+
 **Method:** ```GET```
 
 
@@ -282,6 +298,7 @@ Base Url: http://localhost:8080
 **Description:** Returns list of vehicles inside the parking regardless whether it is parked or not.
 
 **URL:** ```/vehicle/list-in```
+
 **Method:** ```GET```
 
 
@@ -321,7 +338,9 @@ Base Url: http://localhost:8080
 
 ## Parking History
 **Description:** Returns list of past parking transactions. Particulars such as time in, parking time, time out, and parking charge are returned.
+
 **URL:** ```/vehicle/history```
+
 **Method:** ```GET```
 
 
